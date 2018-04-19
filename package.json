@@ -5,7 +5,8 @@
   "repository": "https://github.com/dev-academy-challenges/react-minimal.git",
   "main": "index.js",
   "scripts": {
-    "start": "node server & webpack --watch"
+    "start": "node server && webpack",
+    "dev": "node server & webpack --watch"
   },
   "babel": {
     "presets": [
@@ -17,10 +18,13 @@
   "author": "EDA",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "css-loader": "^0.28.11",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "knex": "^0.14.6",
     "react-router-dom": "^4.2.2",
+    "nodemon": "^1.17.3",
+    "path": "^0.12.7",
     "rodal": "^1.6.3",
     "sqlite3": "^4.0.0",
     "style-loader": "^0.21.0"
