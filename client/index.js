@@ -1,16 +1,12 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
+import React from 'react'
+import {render} from 'react-dom'
 
-function helloTemplate (props) {
-  return (
-    <div>hello {props.name}</div>
+import App from './components/App'
+
+document.addEventListener('DOMContentLoaded', () => {
+  render(
+    <App />,
+
+    document.getElementById('root')
   )
-}
-
-var data = { name: 'mix' }
-var view = helloTemplate(data)
-
-var placeToMount = document.getElementById('root')
-
-ReactDOM.render(view, placeToMount)
-
+})
