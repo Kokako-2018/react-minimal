@@ -17,7 +17,12 @@
   "author": "EDA",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "css-loader": "^0.28.11",
+    "express": "^4.16.2",
+    "knex": "^0.14.6",
+    "rodal": "^1.6.3",
+    "sqlite3": "^4.0.0",
+    "style-loader": "^0.21.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
