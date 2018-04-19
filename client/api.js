@@ -1,12 +1,13 @@
-// import request from 'superagent'
+import request from 'superagent'
+const urlThing = 'http://localhost:3000/api/v1/'
 
-// const data = 'url'
+// startFunctions
 
-// export function getThing (data,callback) {
-//   request
-//     .get(widgetUrl)
-//     .query(name)
-//     .end((err, res) => {
-//       callback(err, res.body)
-//     })
-// }
+export function getDinosaurArray (callback) {
+    request.get(urlThing)
+    .end((err, res) => {
+        callback(err, res.body)
+    })
+}
+
+
