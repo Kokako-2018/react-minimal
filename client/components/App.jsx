@@ -1,35 +1,32 @@
-import React from 'react';
-import Rodal from 'rodal';
+import React from 'react'
 
-// include styles
-import 'rodal/lib/rodal.css';
+// import {getThing} from '../api'
 
-class App extends React.Component {
+export default class App extends React.Component{
+    constructor (props){
+        super(props)
 
-    constructor(props) {
-        super(props);
-        this.state = { visible: false };
+        this.state ={
+            dinosaurs:[],
+        }
     }
 
-    show() {
-        this.setState({ visible: true });
-    }
+    // componentDidMount(){
+    //     this.getthing(this.save)
+    // }
 
-    hide() {
-        this.setState({ visible: false });
-    }
+    // save(){
+    //     this.setState({
+    //         dinosaurs:dinosaurs,
+    //     })
+    // }
 
-    render() {
+    render(){
         return (
             <div>
-                <button onClick={this.show.bind(this)}>show</button>
-
-                <Rodal visible={this.state.visible} onClose={this.hide.bind(this)}>
-                    <div>Content</div>
-                </Rodal>
+                <h1>im here</h1>
             </div>
         )
     }
+    
 }
-
-export default App
