@@ -1,32 +1,18 @@
 import React from 'react'
+import {HashRouter as Router, Route} from 'react-router-dom'
+import Search from './Search'
 
-// import {getThing} from '../api'
 
-export default class App extends React.Component{
-    constructor (props){
-        super(props)
-
-        this.state ={
-            dinosaurs:[],
-        }
-    }
-
-    // componentDidMount(){
-    //     this.getthing(this.save)
-    // }
-
-    // save(){
-    //     this.setState({
-    //         dinosaurs:dinosaurs,
-    //     })
-    // }
-
-    render(){
-        return (
-            <div>
-                <h1>im here</h1>
-            </div>
-        )
-    }
-    
+const App = () => {
+    return (
+        <React.Fragment>
+            <Router>
+                <div>
+                    <Route exact path='/' component={Search} />
+                </div>
+            </Router>
+        </React.Fragment>
+    )
 }
+
+export default App
