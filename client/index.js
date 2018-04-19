@@ -1,8 +1,11 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
+import React from 'react'
+import {render} from 'react-dom'
+import App from './components/App'
 
-import App from './App'
+document.addEventListener('DOMContentLoaded', () => {
+  render(
+    <App />,
 
-var placeToMount = document.getElementById('root')
-
-ReactDOM.render(<App />, placeToMount)
+    document.getElementById('root')
+  )
+})
