@@ -41,3 +41,9 @@ input[type=text] {
 button {
     color: black;
 }
+
+p{
+font-size:2rem;
+display: flex;
+
+}

@@ -15,9 +15,11 @@ const App = () => {
                 </div>
                 <div>
                     <Route exact path='/' component={Search} />
+
                 </div>
                 <div>   
                     <Route path='/' component={This} />
+
                 </div>
                 </div>
             </Router>
