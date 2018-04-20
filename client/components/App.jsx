@@ -10,7 +10,7 @@ const App = () => {
             <Router>
                 <div>
                     <Route exact path='/' component={Search} />
-                    <Route path='/' component={This} />
+                    {/* <Route path='/' component={This} /> */}
                 </div>
             </Router>
         </React.Fragment>

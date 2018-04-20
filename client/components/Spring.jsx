@@ -5,11 +5,7 @@ import delay from 'delay'
 
 import {Spring, Trail, Transition, animated } from 'react-spring'
 
-const Header = ({ children, bold, styles }) => (
-    <h1 style={styles}>
-        {bold ? <b>{children}</b> : children}
-    </h1>
-)
+
 
 export default class Springer extends React.Component {
     constructor(props) {
