@@ -76,12 +76,13 @@ export default class Search extends React.Component{
         const {show, selected} = this.state
         return (
             <div>
-                 <h1>Existing</h1>
+                 <h1>Go ahead! Search for a dino.</h1>
                 <form>
-                    <input onChange={this.handleChange} type='text' placeholder="Enter dinosaur name here" />
+                    <input onChange={this.handleChange} type='text' placeholder="Enter dino name" />
                 </form>
                     
                 <div>
+
                     <div>
                         You've found {this.state.displayDino.map((dino, i) => {
                             return(
