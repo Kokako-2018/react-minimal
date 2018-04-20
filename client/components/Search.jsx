@@ -18,11 +18,9 @@ export default class Search extends React.Component{
 //before page renders
     componentDidMount(){
         getDinosaurArray(this.saveDinos)
-        console.log("mounted")
     }
     
    saveDinos(err, dinoArray){
-    console.log("saving", dinoArray)
        this.setState ({
            error: err,
            dinoArray: dinoArray
@@ -35,16 +33,14 @@ export default class Search extends React.Component{
         this.setState ({
             dinosaur: value
         })
-        console.log("target", e.target.value)
         this.findDinosaur(e.target.value)
         
     }
 
     findDinosaur(word) {
         let dinoArray = this.state.dinoArray  
-        let dinosaur = this.state.dinosaur  
+        // let dinosaur = this.state.dinosaur  
         let displayDino = dinoArray.filter(dino => {
-            console.log('matching', dino.name.includes(word))
             return dino.name.includes(word)
         })
             this.setState({
@@ -52,12 +48,6 @@ export default class Search extends React.Component{
             })
     }
 
-    // render: function render () {
-    //     const dinoString = this.state.dinosaur
-    //     if (dinoString.length > 0) {
-    //         return this.findDinosaur()
-    //     }
-    // }
 
     render () {
         return (
@@ -81,6 +71,3 @@ export default class Search extends React.Component{
     }
     
 }
-
-                    {/* <input type='submit' onClick={this.goFindDinosaur} value="Find them!" /> */}
-                    {/* <if (dinoString.length > 0) {this.findDinosaur()}/> */}

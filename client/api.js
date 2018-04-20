@@ -7,7 +7,6 @@ export function getDinosaurArray (callback) {
     request.get(urlThing)
     .end((err, res) => {
         callback(err, res.body)
-        console.log("api", res.body)
     })
 }
 
