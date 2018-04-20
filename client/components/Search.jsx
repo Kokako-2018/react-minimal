@@ -1,5 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
+import './Search.css'
 
 export default class Search extends React.Component{
     constructor (props){
@@ -15,9 +16,9 @@ export default class Search extends React.Component{
         this.saveDinos=this.saveDinos.bind(this)
     
     }
-    componentDidMount(){
-        getDinosaurArray(this.saveDinos)
-    }
+    // componentDidMount(){
+    //     getDinosaurArray(this.saveDinos)
+    // }
     
    saveDinos(dinoArray){
        this.setState ({
@@ -52,6 +53,7 @@ export default class Search extends React.Component{
                     <input onChange={this.handleChange} type='text' placeholder="Enter dinosaur name here" />
                     {/* <input type='submit' onClick={this.goFindDinosaur} value="Find them!" /> */}
                     <h1>{this.state.displayDino.name}</h1>
+                    <button type="submit"><i className="fa fa-search"></i></button>
                     <img src={this.state.displayDino.image} />
                 </form>
             </div>

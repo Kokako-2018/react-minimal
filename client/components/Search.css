@@ -1,0 +1,11 @@
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    position: relative;
+    margin-right: 20%;
+}
+
+button {
+    color: black;
+}
