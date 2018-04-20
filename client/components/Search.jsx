@@ -1,5 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
+import {getDinosaurArray} from '../api.js'
 
 export default class Search extends React.Component{
     constructor (props){
@@ -11,33 +12,41 @@ export default class Search extends React.Component{
             displayDino: []
         }
         this.handleChange = this.handleChange.bind(this)
-        this.goFindDinosaur=this.goFindDinosaur.bind(this)
         this.saveDinos=this.saveDinos.bind(this)
     
     }
+//before page renders
     componentDidMount(){
         getDinosaurArray(this.saveDinos)
         console.log("mounted")
     }
     
-   saveDinos(dinoArray){
+   saveDinos(err, dinoArray){
     console.log("saving", dinoArray)
        this.setState ({
+           error: err,
            dinoArray: dinoArray
        })
    }
 
+   //after page renders
     handleChange(e) {
-        console.log(e.target.value)
-        this.findDinosaur()
         let value = e.target.value 
-        this.setState ({dinosaur: value})
+        this.setState ({
+            dinosaur: value
+        })
+        console.log("target", e.target.value)
+        this.findDinosaur(e.target.value)
+        
     }
 
-    findDinosaur() {
-        let displayDino = this.state.dinoArray.filter(dino => {
-            return dino = this.state.dinosaur})
-            console.log("finding", displayDino)
+    findDinosaur(word) {
+        let dinoArray = this.state.dinoArray  
+        let dinosaur = this.state.dinosaur  
+        let displayDino = dinoArray.filter(dino => {
+            console.log('matching', dino.name.includes(word))
+            return dino.name.includes(word)
+        })
             this.setState({
                 displayDino: displayDino
             })
@@ -53,16 +62,25 @@ export default class Search extends React.Component{
     render () {
         return (
             <div>
+                 <h1>Existing</h1>
                 <form>
                     <input onChange={this.handleChange} type='text' placeholder="Enter dinosaur name here" />
-                    {/* <input type='submit' onClick={this.goFindDinosaur} value="Find them!" /> */}
-                    {/* <if (dinoString.length > 0) {this.findDinosaur()}/> */}
-                    <h1>Existing</h1>
-                    <h1>{this.state.displayDino.name}</h1>
-                    <img src={this.state.displayDino.image} />
                 </form>
+                    
+                <div>
+                    You've found {this.state.displayDino.map((dinos, i) =><div key={i}> 
+                    
+                    <h1>{dinos.name}</h1>
+
+                    <img src={dinos.image} width='300px' />
+                    </div>
+                    )}
+                    </div>
             </div>
         )
     }
     
 }
+
+                    {/* <input type='submit' onClick={this.goFindDinosaur} value="Find them!" /> */}
+                    {/* <if (dinoString.length > 0) {this.findDinosaur()}/> */}
