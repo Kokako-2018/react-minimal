@@ -29,7 +29,8 @@
     "react-spring": "^4.2.0",
     "rodal": "^1.6.3",
     "sqlite3": "^4.0.0",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "superagent": "^3.8.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
