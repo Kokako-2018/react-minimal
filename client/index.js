@@ -1,16 +1,22 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
+import React from 'react'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import {createStore, applyMiddleware, compose} from 'redux'
+import thunkMiddleware from 'redux-thunk'
 
-function helloTemplate (props) {
-  return (
-    <div>hello {props.name}</div>
+import reducers from './reducers'
+import App from './components/App'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = createStore(reducers, composeEnhancers(
+  applyMiddleware(thunkMiddleware)
+))
+
+document.addEventListener('DOMContentLoaded', () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('app')
   )
-}
-
-var data = { name: 'mix' }
-var view = helloTemplate(data)
-
-var placeToMount = document.getElementById('root')
-
-ReactDOM.render(view, placeToMount)
-
+})
